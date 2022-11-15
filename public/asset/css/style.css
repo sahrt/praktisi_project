@@ -1,0 +1,52 @@
+.back-link a img{
+    width: 50px;
+    transition: 0.5s;
+}
+.back-link a img:hover{
+    width: 60px;
+}
+
+.buy-link  {
+    transition: 0.5s;
+}
+.buy-link:hover{
+    width: 70px; 
+    margin-right:10px;
+}
+.buy-link  img{
+    width: 30px; 
+    margin-right:10px;
+    transition: 0.5s;
+}
+.buy-link img:hover{
+    width: 40px; 
+    margin-right:10px;
+}
+.nav-img {
+  
+    width:70px; 
+    margin-right:10px;
+    transition: 0.8s;
+}
+.nav_img:hover{
+    width: 100px;
+    margin-right:10px;
+}
+
+.jumb_img{
+    width: 100px;
+    margin-right: 20px;
+    transition: 1s;
+}
+.jumb_img:hover{
+    width: 170px;
+    margin-right: 20px;
+   }
+.link-list{
+    transition: 1s;
+}
+.link-list:hover{
+    background-color: orange;
+}
+
+
