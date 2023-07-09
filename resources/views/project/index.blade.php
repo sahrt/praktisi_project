@@ -97,4 +97,24 @@
 
 @endsection
 
+@section ('containt 4')
+<div class="container">
+    <div class = "title text-center">
+        <h3>Image Kucing</h3>
+        <h5>Kumpulan tingkah lucu kucing</h5>
+    </div>
+
+    <div class="grid">
+      <div class="g-col-4 g-col-md-4 bg-success">
+          <img src="https://picsum.photos/200/300?random=1" align="assets_Admin" class="img-fluid">
+      </div>
+      <div class="g-col-4 g-col-md-4 bg-primary">.g-col-4 .g-col-md-4</div>
+      <div class="g-col-4 g-col-md-4 bg-danger">.g-col-4 .g-col-md-4</div>
+    </div>
+</div>
+
+@endsection
+
+
+
 

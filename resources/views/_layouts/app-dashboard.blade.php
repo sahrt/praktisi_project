@@ -20,9 +20,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Home</span></a>
             </li>
 
             <!-- Divider -->
@@ -38,15 +38,28 @@
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                     aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>lihat Barang</span>
                 </a>
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item active" href="cards.html">Cards</a>
-                    </div>
+                        <h6 class="collapse-header">Melihat Barang</h6>
+                        <a class="collapse-item" href="{{ route('viewPage', $type = ' ') }}">Lihat Semua </a>
+                        <a class="collapse-item active" href="{{ route('viewPage', $type='minuman') }}">Minuman</a>
+                        <a class="collapse-item active" href="{{ route('viewPage', $type='sabun') }}">Sabun</a>
+                        
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='beras') }}">Beras</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='minyak') }}">Minyak Goreng</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='telur') }}">Telur</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='saos') }}">Saos</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='kecap') }}">Kecap</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='petis') }}">Petis</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='bumbu') }}">Bumbu</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='bawang') }}">Bawang</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='mie') }}">Mie</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='mentega') }}">Mentega</a>
+                        <a class="collapse-item active" href="{{ route('viewPage',$type ='tepung') }}">Tepung Dan Gula</a>
+                        
                 </div>
             </li>
 
@@ -55,16 +68,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Mengolah Barang</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Fitur Pengelolah Barang:</h6>
+                        <a class="collapse-item active" href="utilities-color.html">Tambah Barang</a>
+                        <a class="collapse-item active" href="utilities-border.html">Ubah Barang</a>
+                        <a class="collapse-item active" href="utilities-animation.html">Delete Barang</a>
                     </div>
                 </div>
             </li>
@@ -82,18 +94,37 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Nomor </span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header">List Nomor : </h6>
+                        <a class="collapse-item" href="login.html">Agen Pasar</a>
+                        <a class="collapse-item" href="register.html">Pelangan</a>
+                        <a class="collapse-item" href="forgot-password.html">Nomor Tengkulak</a>
+                       
+                    </div>
+                </div>
+            </li>
+             <!-- Heading -->
+             <div class="sidebar-heading">
+                Pemesan
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pemesan Barang </span>
+                </a>
+                <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">List Pemesan : </h6>
+                        <a class="collapse-item" href="login.html">Pemesan langgan</a>
+                        <a class="collapse-item" href="register.html">Pemesan Langgan</a>
+                        <a class="collapse-item" href="forgot-password.html">Pesanan Peting</a>
+                       
                     </div>
                 </div>
             </li>
@@ -102,14 +133,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Laporan Hasil Dagang Mingguan</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Laporan Hasil Dagang Tahunan</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Kendalah Pasar</span></a>
             </li>
 
             <!-- Divider -->

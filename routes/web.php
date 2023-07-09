@@ -59,7 +59,7 @@ Route::get('/email/verification/{id}', function ($id) {
 
 //route member controller
 Route::group(['prefix' => 'user/'], function(){
-    Route::get("admin/dashboard", [MemberController::class,'index'])->name('dashboard')->middleware('auth','check-access:1');
+    Route::get("admin/dashboard", [MemberController::class,'index'])->name('dashboard')->middleware('auth','check-access:1'); // auth -> untuk apakah user sudah login kemudian chek-acces sesuai
     Route::get("admin/logout", [MemberController::class,'logout'])->name('logout');
     Route::get('member/all',[MemberController::class,'getAll'])->name('member')->middleware('auth','check-access:0'); 
     Route::get('view/type',[MemberController::class,'getList'])->name('type'); 
@@ -70,6 +70,12 @@ Route::group(['prefix' => 'user/'], function(){
 
 });
 
+
+//route show barang
+Route::group(['prefix'=>'user/gudang'], function(){
+    Route::get('{type?}',[GudangController::class,'viewPage'])->name('viewPage')->middleware('auth','check-access:1');
+   
+});
 
 
 

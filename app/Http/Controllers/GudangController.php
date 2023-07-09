@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gudang;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -65,6 +66,30 @@ class GudangController extends Controller
     public function help (){
         return view('gudang_kami.help');
     }
+
+    // melakukan alokasi data barang
+
+    //read page
+    public function viewPage( Request $request, $type){
+        $data = $request->session()->get('nameAdmin');
+        // check user bener harus login kedalam website
+        
+        if($data ==  null){
+            return redirect()->url('/');
+        } else if ($data != null){
+            $modalData =  Gudang::where('type', $type)->get();
+            if($type == " "){
+              $type = "all";
+              return view('gudang_kami.view-barang',['barang'=> $modalData,'nameAdmin'=> $data, 'type' => $type]);  
+            } 
+            return view('gudang_kami.view-barang',['barang'=> $modalData,'nameAdmin'=> $data, 'type' => $type]);
+            
+        }
+
+    }
+
+
+    
 
 }
 

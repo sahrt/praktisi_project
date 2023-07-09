@@ -10,24 +10,27 @@ use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
-    public function index (){
+    public function index (Request $request){
         $nameAdmin = Auth::user();
+        $request->session()->put('nameAdmin',$nameAdmin);
+        $nameAdmin = $request->session()->get('nameAdmin');
         $user =  User::all();
-        return view ('gudang_kami/dashboard',['member'=> $user, 'nameAdmin' => $nameAdmin])->with("success","login berhasil trimakasih sudah bergabung");
+        return view ('gudang_kami/dashboard',['member'=> $user, 'nameAdmin'=>$nameAdmin])->with("success","login berhasil trimakasih sudah bergabung");
     }
     public function list (){
         $user  =  User::all();
         return view ('gudang_kami/list',['list'=> $user]);
     }
-    public function logout (){
+    public function logout (Request $request){
         Auth::logout();
+        $request->session()->forget('nameAdmin');
         return redirect('/')->withErrors("Selamat Tinggal");
     }
 
 
 
 
-    //user view
+    //user view client
     public function getView ($jenis='noting', $id=0){
         $users =Kucing::join('barangs','barangs.kode_jenis','=','kucings.id')
         ->where('barangs.id', $id)->get();

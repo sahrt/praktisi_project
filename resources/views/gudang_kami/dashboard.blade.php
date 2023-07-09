@@ -52,6 +52,8 @@
                 <td>{{ $item->updated_at }}</td>
                 <td>
                     <a href=""><button type="button" class="btn btn-warning">Update</button></a>
+                    <br>
+                    <br>
                     <a href="" style=""><button type="button" class="btn btn-danger">Delete</button></a>
                 </td>
               </tr>  
